@@ -180,5 +180,6 @@ iframe {
 @media (max-width: 400px) {
   .contents.cd .role {
     display: block;
+    padding-top: 0.5em;
   }
 }
