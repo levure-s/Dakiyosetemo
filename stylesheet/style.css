@@ -91,6 +91,10 @@ iframe {
   justify-content: center;
   padding: 3em 1em 1em;
 }
+.flex_container.single::after {
+  content: "";
+  width: 50%;
+}
 .movie_container {
   width: 50%;
   padding: 1em;
@@ -110,6 +114,9 @@ iframe {
   background-color: #fff;
   color: #eb6ca5;
 }
+.img_container {
+  max-width: 560px;
+}
 .text_container {
   padding: 0 2em;
 }
@@ -121,8 +128,8 @@ iframe {
   text-align: right;
   font-size: 0.9em;
 }
-.staff .img_container {
-  width: 700px;
+.staff .text_container {
+  width: 50%;
 }
 .name {
   color: #eb6ca5;
@@ -134,21 +141,44 @@ iframe {
   font-size: 0.6em;
   padding-left: 1em;
 }
+.flex_container .flex_container {
+  padding: 0;
+  width: 50%;
+}
 .cd .img_container {
   max-width: 250px;
 }
+.flex_container .flex_container .img_container {
+  width: 40%;
+}
+.flex_container .flex_container .text_container {
+  width: 60%;
+}
 
 @media (max-width: 920px) {
-  .flex_container {
+  .flex_container,
+  .flex_container .flex_container {
     flex-wrap: wrap;
+    width: 100%;
   }
   .movie_container {
     width: 80%;
     max-width: 560px;
   }
   .img_container,
-  .staff .img_container {
+  .staff .img_container,
+  .flex_container .flex_container .img_container {
     width: 78%;
+    padding-bottom: 1em;
+  }
+  .staff .text_container,
+  .flex_container .flex_container .text_container {
+    width: 100%;
+  }
+  .flex_container .text_container:first-child {
+    padding-bottom: 4em;
+  }
+  .flex_container.single .text_container:first-child {
     padding-bottom: 1em;
   }
 }
@@ -177,8 +207,8 @@ iframe {
   }
 }
 
-@media (max-width: 400px) {
-  .contents.cd .role {
+@media (max-width: 470px) {
+  .role.break {
     display: block;
     padding-top: 0.5em;
   }
